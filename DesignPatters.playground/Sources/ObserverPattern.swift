@@ -1,14 +1,13 @@
 import Foundation
 
 public protocol IObserver {
-    associatedtype Item
-    func update(data: Item)
+    func update<T>(with data: T)
 }
 
 public protocol IObservable {
-    associatedtype Obs
-    func add(observer: Obs)
-    func remove(observer: Obs)
+    associatedtype Observer: IObserver
+    func add(observer: Observer)
+    func remove(observer: Observer)
     func notify()
 }
 
@@ -18,7 +17,7 @@ public class WeatherStation<T: IObserver>: IObservable {
     
     public init() {
         observers = []
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak self] timer in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
             guard let self = self else { return }
             self.notify()
         }
@@ -29,36 +28,37 @@ public class WeatherStation<T: IObserver>: IObservable {
     }
     
     public func remove(observer: T) {
-        
+        observers?.removeAll()
     }
     
     public func notify() {
         observers?.forEach { observer in
-            observer.update(data: retrieveTemperature() as! T.Item)
+            observer.update(with: generateTemperature())
         }
     }
     
-    func retrieveTemperature() -> String {
+    private func generateTemperature() -> String {
         String(format: "%.2f°C", Float.random(in: -10...45))
     }
 }
 
 public class Display: IObserver {
-    public typealias Item = String
     
-    var weatherStation: WeatherStation<Self>
+    weak var weatherStation: WeatherStation<Display>?
     
-    public init(weatherStation: WeatherStation) {
+    public init(weatherStation: WeatherStation<Display>) {
         self.weatherStation = weatherStation
-        self.weatherStation.add(observer: self)
     }
     
-    public func update(data: Item) {
-        
+    public func update<String>(with data: String) {
+        debugPrint(data)
     }
     
-    func update() {
-        print(weatherStation.retrieveTemperature())
+    public func observe() {
+        self.weatherStation?.add(observer: self)
+    }
+    
+    public func dispose() {
+        weatherStation?.remove(observer: self)
     }
 }
-
