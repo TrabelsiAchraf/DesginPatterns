@@ -1,6 +1,7 @@
 import Foundation
 
 public protocol IObserver {
+    var id : Int { get set }
     func update<T>(with data: T)
 }
 
@@ -28,7 +29,7 @@ public class WeatherStation<T: IObserver>: IObservable {
     }
     
     public func remove(observer: T) {
-        observers?.removeAll()
+        observers = observers?.filter { $0.id != observer.id }
     }
     
     public func notify() {
@@ -44,10 +45,13 @@ public class WeatherStation<T: IObserver>: IObservable {
 
 public class Display: IObserver {
     
+    public var id: Int
+    
     weak var weatherStation: WeatherStation<Display>?
     
-    public init(weatherStation: WeatherStation<Display>) {
+    public init(_ weatherStation: WeatherStation<Display>, _ identifier: Int) {
         self.weatherStation = weatherStation
+        self.id = identifier
     }
     
     public func update<String>(with data: String) {

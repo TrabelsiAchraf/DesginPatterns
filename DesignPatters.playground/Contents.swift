@@ -1,7 +1,7 @@
 import Foundation
 
 let weatherStation = WeatherStation<Display>()
-let display = Display(weatherStation: weatherStation)
+let display = Display(weatherStation, UUID().hashValue)
 
 display.observe()
 
