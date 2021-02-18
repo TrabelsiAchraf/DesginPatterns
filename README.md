@@ -23,5 +23,5 @@
 
 [Code example here](DesignPatters.playground/Sources/ObserverPattern.swift)
 
-#### Demo
+#### Implementation 
 ![Demo](https://github.com/TrabelsiAchraf/DesginPatterns/blob/master/resources/observer_pattern.gif)
