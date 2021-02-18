@@ -15,5 +15,5 @@
     * remove(observerX) : to remove a specific observer.
     * notify() : to notify all observers.
 
-Code example [here].
-[here]: https://github.com/TrabelsiAchraf/DesginPatterns/blob/master/DesignPatters.playground/Sources/ObserverPattern.swift
+Code example [link here].
+[link here]: https://github.com/TrabelsiAchraf/DesginPatterns/blob/master/DesignPatters.playground/Sources/ObserverPattern.swift
