@@ -22,5 +22,6 @@
     * notify() : to notify all observers.
 
 [Code example here](DesignPatters.playground/Sources/ObserverPattern.swift)
-- 
+
+#### Demo
 ![Demo](https://github.com/TrabelsiAchraf/DesginPatterns/blob/master/resources/observer_pattern.gif)
