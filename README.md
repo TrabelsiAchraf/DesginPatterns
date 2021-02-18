@@ -4,8 +4,8 @@
 ![](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
 
 ## Table Of Contents
-- [Behavioral](#behavioral)
- * [Observer Pattern](#observer)
+ - [Behavioral](#behavioral)
+    * [Observer Pattern](#observer)
 
 <a name="behavioral"></a>
 ## Behavioral : 
