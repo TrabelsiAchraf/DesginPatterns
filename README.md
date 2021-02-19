@@ -7,6 +7,9 @@
  - [Behavioral](#behavioral)
     * [Observer Pattern](#observer)
 
+ - [Strcutural](#strcutural)
+    * [Adapter Pattern](#adapter)
+
 <a name="behavioral"></a>
 ## Behavioral : 
 
@@ -25,3 +28,17 @@
 
 #### Implementation 
 ![Demo](https://github.com/TrabelsiAchraf/DesginPatterns/blob/master/resources/observer_pattern.gif)
+
+
+<a name="strcutural"></a>
+## Strcutural : 
+
+<a name="adapter"></a>
+### Adapter Pattern
+
+ - Named also Wrapper.
+ - Allows objects with incompatible interfaces to collaborate.
+ - lets you create a middle-layer class that serves as a translator between your code and a legacy class, a 3rd-party class or any other class with a weird interface.
+ - Do not add an additional behavior.
+
+[Code example here](DesignPatters.playground/Sources/AdapterPattern.swift)
