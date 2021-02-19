@@ -27,7 +27,7 @@
 [Code example here](DesignPatters.playground/Sources/ObserverPattern.swift)
 
 #### Implementation 
-![Demo](https://github.com/TrabelsiAchraf/DesginPatterns/blob/master/resources/observer_pattern.gif)
+![Demo](resources/observer_pattern.gif)
 
 
 <a name="strcutural"></a>
@@ -42,3 +42,6 @@
  - Do not add an additional behavior.
 
 [Code example here](DesignPatters.playground/Sources/AdapterPattern.swift)
+
+#### Implementation 
+![Demo](resources/adapter_pattern.gif)
