@@ -4,9 +4,7 @@ import Foundation
 
 public class SomeSocialMediaAuthenticator {
     
-    public init() {
-        
-    }
+    public init() {}
     
     public func login(
         email: String,
