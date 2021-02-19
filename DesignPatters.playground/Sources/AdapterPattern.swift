@@ -12,8 +12,10 @@ public class SomeSocialMediaAuthenticator {
         completion: @escaping (Result<SomeSocialMediaUser, Error>) -> Void) {
         
         let token = "mother$0fucker!token€2021"
-        let user = SomeSocialMediaUser(email: email, password: password, token: token)
-        completion(.success(user))
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            let user = SomeSocialMediaUser(email: email, password: password, token: token)
+            completion(.success(user))
+        }
     }
     
     public struct SomeSocialMediaUser {
