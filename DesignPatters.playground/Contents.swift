@@ -36,4 +36,5 @@ public class LoginViewController: UIViewController {
     }
 }
 
-let viewController = LoginViewController(authService: SomeSocialMediaAuthenticatorAdapter(authenticator: SomeSocialMediaAuthenticator()))
+let adapter = SomeSocialMediaAuthenticatorAdapter(authenticator: SomeSocialMediaAuthenticator())
+let viewController = LoginViewController(authService: adapter)
